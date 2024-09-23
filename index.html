@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta
+      name="description"
+      content="Eseoghene J. Gbunoghene's Web Portfolio"
+    >
+    <meta name="author" content="Eseoghene J. Gbunoghene" >
+    <title>Eseoghene J. Gbunoghene | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/styles/style.css" >
+    <script src="/scripts/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="profile-container">
+        <img
+          src="/images/Eseoghene.jpg"
+          alt="Eseoghene J. Gbunoghene"
+          class="profile-pic"
+          width="70"
+          height="70"
+        >
+        <h1>Eseoghene J. Gbunoghene</h1>
+      </div>
+      <nav>
+        <button
+          id="menu"
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+        ></button>
+        <ul class="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#chamber">Chamber</a></li>
+          <li><a href="https://github.com/S-A-oghene">GitHub Profile</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/eseoghene-g-128733130/"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section class="coursework">
+            <h2>Course Work</h2>
+            <div id="coursework-container"></div>
+        </section>        
+      <section class="image-section">
+        <h2>Lagos, Nigeria</h2>
+        <img
+          src="/images/danfo.webp"
+          alt="Danfo image"
+          width="589"
+          height="393"
+        >
+        <p id="img-description">
+          "Danfo", a public means of transportation in Lagos, Nigeria
+        </p>
+        <p id="img-credit">Credit: sheyi owolabi</p>
+      </section>
+    </main>
+
+    <section class="certificate-section">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="filters">
+        <button id="filter-all">All</button>
+        <button id="filter-cse">CSE</button>
+        <button id="filter-wdd">WDD</button>
+      </div>
+      <div class="course-cards">
+        <!-- Course cards will be dynamically rendered -->
+      </div>
+      <p>Total Credits: <span id="total-credits"></span></p>
+    </section>
+
+    <footer>
+      <p>
+        &copy; <span id="currentyear"></span> Eseoghene Jacob Gbunoghene
+        &nbsp;&nbsp;|&nbsp;&nbsp; Nigeria
+      </p>
+      <p id="lastModified"></p>
+    </footer>
+  </body>
+</html>
