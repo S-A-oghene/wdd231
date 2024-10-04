@@ -1,0 +1,9 @@
+{
+   "familyName":"Odinaka",
+   "moveInDate":"10-06-2024",
+   "familySize":20,
+   "isVisitedByBishopric": true,
+   "familyMembers": [
+    {"name":"Rich Odinaka", "gender":"male", "birthDate":"01-05-1990"}, {"name":"Randolph Odinaka", "gender":"male", "birthDate":"10-06-1992"}
+   ]
+}

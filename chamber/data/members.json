@@ -1,0 +1,61 @@
+{
+    "members": [
+        {
+            "name": "Oasis Hotel",
+            "address": "1 Sankara Street, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/hotel.webp",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Saharan Adventures",
+            "address": "15 Dune Road, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/saharan-adventure.webp",
+            "membershipLevel": "Silver"
+        },
+        {
+            "name": "Kagaro Treasure Hills",
+            "address": "7 Market Square, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/danfo1treasure-hill.webp",
+            "membershipLevel": "Bronze"
+        },
+        {
+            "name": "Camel Caravan Tours",
+            "address": "22 Oasis Avenue, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/caravan-tours.webp",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Sahel Spices",
+            "address": "9 Flavor Lane, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/spice-market.webp",
+            "membershipLevel": "Silver"
+        },
+        {
+            "name": "Smart Tech Solutions",
+            "address": "3 Innovation Way, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/tech-solutions.webp",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Choice Textiles",
+            "address": "11 Weaver's Street, Lagos",
+            "phone": "+234 0000 1234",
+            "website": "#",
+            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/textile.webp",
+            "membershipLevel": "Bronze"
+        }
+    ]
+}
+
