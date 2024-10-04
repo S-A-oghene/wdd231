@@ -5,7 +5,7 @@
             "address": "1 Sankara Street, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/hotel.webp",
+            "image": "images/hotel.webp",
             "membershipLevel": "Gold"
         },
         {
@@ -13,7 +13,7 @@
             "address": "15 Dune Road, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/saharan-adventure.webp",
+            "image": "images/saharan-adventure.webp",
             "membershipLevel": "Silver"
         },
         {
@@ -21,7 +21,7 @@
             "address": "7 Market Square, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/danfo1treasure-hill.webp",
+            "image": "images/treasure-hill.webp",
             "membershipLevel": "Bronze"
         },
         {
@@ -29,7 +29,7 @@
             "address": "22 Oasis Avenue, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/caravan-tours.webp",
+            "image": "images/caravan-tours.webp",
             "membershipLevel": "Gold"
         },
         {
@@ -37,7 +37,7 @@
             "address": "9 Flavor Lane, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/spice-market.webp",
+            "image": "images/spice-market.webp",
             "membershipLevel": "Silver"
         },
         {
@@ -45,7 +45,7 @@
             "address": "3 Innovation Way, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/tech-solutions.webp",
+            "image": "images/tech-solutions.webp",
             "membershipLevel": "Gold"
         },
         {
@@ -53,9 +53,8 @@
             "address": "11 Weaver's Street, Lagos",
             "phone": "+234 0000 1234",
             "website": "#",
-            "image": "https://s-a-oghene.github.io/wdd231/chamber/images/textile.webp",
+            "image": "images/textile.webp",
             "membershipLevel": "Bronze"
         }
     ]
 }
-

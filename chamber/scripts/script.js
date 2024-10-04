@@ -20,7 +20,7 @@ function displayMembers(members, viewType) {
         card.className = 'member-card';
         card.innerHTML = `
             <h2>${member.name}</h2>
-            <img src="images/${member.image}" alt="${member.name}" width="100">
+            <img src="${member.image}" alt="${member.name}" width="100" height="67">
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
             <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
