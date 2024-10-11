@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home page for Lasgidi Chamber of Commerce">
+    <meta name="author" content="Eseoghene Jacob Gbunoghene">
+    <title>Lasgidi Chamber of Commerce Home</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Lasgidi Chamber of Commerce Home">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://s-a-oghene.github.io/wdd231/chamber/images/danfo1.webp">
+    <meta property="og:url" content="https://s-a-oghene.github.io/wdd231/chamber/index.html">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+
+    <!-- Add structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lasgidi Chamber of Commerce",
+      "url": "https://s-a-oghene.github.io/wdd231/chamber/",
+      "logo": "https://s-a-oghene.github.io/wdd231/chamber/images/danfo1.webp"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <img src="images/danfo1.webp" alt="Lasgidi Chamber of Commerce Logo" class="profile-pic" width="70" height="70">
+            <h1>Lasgidi Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <button id="menu" class="nav-toggle" aria-label="Toggle navigation menu"></button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2 class="visually-hidden">Welcome to Lasgidi Chamber of Commerce</h2>
+            <div class="hero-image-container">
+                <img src="images/lagos-skyline.webp" alt="Lagos Skyline" class="hero-image">
+            </div>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </section>
+                
+
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <p>Join us for our annual Business Expo on October 15th, 2024!</p>
+        </section>
+
+        <section class="weather">
+            <h2>Weather</h2>
+            <div id="weather-info"></div>
+            <div id="weather-forecast"></div>
+        </section>
+
+        <section class="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Lasgidi Chamber of Commerce</p>
+            <p>1 Okhira Road NRC Compound Ebute-Metta, Lagos, Nigeria</p>
+            <p>info@lasgidicc.org</p>
+            <p>(234) 000-2300-000</p>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube" width="30" height="17">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter.webp" alt="Twitter" width="30" height="17">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn" width="30" height="17">
+            </a>
+        </div>
+        <p>&copy; <span id="current-year"></span> Lasgidi Chamber of Commerce | Eseoghene Jacob Gbunoghene | WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

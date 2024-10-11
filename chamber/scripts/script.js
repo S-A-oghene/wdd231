@@ -9,39 +9,76 @@ async function fetchMembers() {
     }
 }
 
-// Display members
-function displayMembers(members, viewType) {
-    const container = document.getElementById('directory-container');
-    container.innerHTML = '';
-    container.className = viewType;
+// Display company spotlights
+async function displaySpotlights() {
+    const members = await fetchMembers();
+    const goldSilverMembers = members.filter(member => 
+        member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver'
+    );
+    
+    const spotlights = [];
+    while (spotlights.length < 3 && goldSilverMembers.length > 0) {
+        const randomIndex = Math.floor(Math.random() * goldSilverMembers.length);
+        spotlights.push(goldSilverMembers.splice(randomIndex, 1)[0]);
+    }
 
-    members.forEach(member => {
-        const card = document.createElement('div');
-        card.className = 'member-card';
-        card.innerHTML = `
-            <h2>${member.name}</h2>
+    const container = document.getElementById('spotlight-container');
+    spotlights.forEach(member => {
+        const spotlight = document.createElement('div');
+        spotlight.className = 'spotlight';
+        spotlight.innerHTML = `
+            <h3>${member.name}</h3>
             <img src="${member.image}" alt="${member.name}" width="100" height="67">
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
             <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
             <p>Membership Level: ${member.membershipLevel}</p>
         `;
-        container.appendChild(card);
+        container.appendChild(spotlight);
     });
 }
 
-// Toggle view
-function setupViewToggle() {
-    const gridBtn = document.getElementById('grid-view');
-    const listBtn = document.getElementById('list-view');
+// Fetch weather data
+async function fetchWeather() {
+    const apiKey = 'e4a264b33afd8e63434ebd6a942dd800';
+    const city = 'Lagos,NG';
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
-    gridBtn.addEventListener('click', () => {
-        document.getElementById('directory-container').className = 'grid-view';
-    });
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
 
-    listBtn.addEventListener('click', () => {
-        document.getElementById('directory-container').className = 'list-view';
-    });
+// Display weather information
+async function displayWeather() {
+    const weatherData = await fetchWeather();
+    const currentWeather = weatherData.list[0];
+
+    const weatherInfo = document.getElementById('weather-info');
+    weatherInfo.innerHTML = `
+        <h3>Current Weather</h3>
+        <p>Temperature: ${currentWeather.main.temp.toFixed(0)}°C</p>
+        <p>Description: ${capitalizeWords(currentWeather.weather[0].description)}</p>
+    `;
+
+    const weatherForecast = document.getElementById('weather-forecast');
+    weatherForecast.innerHTML = '<h3>3-Day Forecast</h3>';
+    for (let i = 1; i <= 3; i++) {
+        const forecast = weatherData.list[i * 8]; // Every 8th entry is 24 hours apart
+        const date = new Date(forecast.dt * 1000);
+        weatherForecast.innerHTML += `
+            <p>${date.toLocaleDateString('en-US', { weekday: 'short' })}: ${forecast.main.temp.toFixed(0)}°C</p>
+        `;
+    }
+}
+
+// Capitalize each word of a string
+function capitalizeWords(str) {
+    return str.replace(/\b\w/g, l => l.toUpperCase());
 }
 
 // Update footer information
@@ -66,9 +103,8 @@ function setupNavigationMenu() {
 
 // Initialize the page
 async function init() {
-    const members = await fetchMembers();
-    displayMembers(members, 'grid-view');
-    setupViewToggle();
+    displaySpotlights();
+    displayWeather();
     setupNavigationMenu();
     updateFooter();
 }
