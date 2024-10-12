@@ -90,7 +90,7 @@ main {
 .hero {
   position: relative;
   width: 100%;
-  height: 400px; /* Standard height for desktop */
+  height: 400px;
   margin-bottom: 2rem;
   overflow: hidden;
 }
@@ -131,7 +131,6 @@ main {
   border: 0;
 }
 
-
 /* Current Events Section */
 .current-events {
   background-color: white;
@@ -162,6 +161,112 @@ main {
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Join Page Styles */
+.join-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.join-page form {
+  flex: 1 1 60%;
+  min-width: 300px;
+}
+
+.join-page form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.join-page form input,
+.join-page form select,
+.join-page form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.join-page form input[type="submit"] {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.membership-cards {
+  flex: 1 1 30%;
+  min-width: 250px;
+  display: grid;
+  gap: 1rem;
+}
+
+.membership-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.membership-card h3 {
+  margin-top: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Thank You Page Styles */
+.thank-you-page {
+  text-align: center;
+}
+
+#form-summary {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 /* Footer Styles */
@@ -212,7 +317,15 @@ footer {
 
   .hero {
     height: 300px;
-}
+  }
+
+  .join-page {
+    flex-direction: column;
+  }
+
+  .membership-cards {
+    order: -1;
+  }
 }
 
 /* Improved color contrast for accessibility */
@@ -222,4 +335,167 @@ a {
 
 button {
   background-color: #27ae60;
+}
+
+/* Animation for membership cards */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.membership-card {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.membership-card:nth-child(1) { animation-delay: 0.1s; }
+.membership-card:nth-child(2) { animation-delay: 0.2s; }
+.membership-card:nth-child(3) { animation-delay: 0.3s; }
+.membership-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Directory page styles */
+.view-toggle {
+  margin-bottom: 1rem;
+}
+
+.view-toggle button {
+  background-color: var(--primary-color);
+  color: var(--header-text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#directory-container {
+  display: grid;
+  gap: 1rem;
+}
+
+#directory-container.grid-view {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#directory-container.list-view {
+  grid-template-columns: 1fr;
+}
+
+.member-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+/* Additional styles for better form layout */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="submit"] {
+  width: auto;
+  cursor: pointer;
+}
+
+/* Improved modal styles */
+.modal-content {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 200px;
+  }
+
+  .cta-button {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .membership-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  header, nav, footer, .cta-button, .membership-cards {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin-bottom: 1cm;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .member-card, #form-summary {
+    page-break-inside: avoid;
+  }
 }

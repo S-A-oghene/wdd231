@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join page for Lasgidi Chamber of Commerce">
+    <meta name="author" content="Eseoghene Jacob Gbunoghene">
+    <title>Join Lasgidi Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Join Lasgidi Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://s-a-oghene.github.io/wdd231/chamber/images/danfo1.webp">
+    <meta property="og:url" content="https://s-a-oghene.github.io/wdd231/chamber/join.html">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+
+    <!-- Add structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lasgidi Chamber of Commerce",
+      "url": "https://s-a-oghene.github.io/wdd231/chamber/",
+      "logo": "https://s-a-oghene.github.io/wdd231/chamber/images/danfo1.webp"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <img src="images/danfo1.webp" alt="Lasgidi Chamber of Commerce Logo" class="profile-pic" width="70" height="70">
+            <h1>Lasgidi Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <button id="menu" class="nav-toggle" aria-label="Toggle navigation menu"></button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="join-page">
+        <h1>Join the Chamber</h1>
+        <form method="get" action="thankyou.html">
+            <label for="first-name">First Name:
+                <input type="text" id="first-name" name="first-name" required autocomplete="given-name" title="Please enter your first name">
+            </label>
+
+            <label for="last-name">Last Name:
+                <input type="text" id="last-name" name="last-name" required autocomplete="family-name" title="Please enter your last name">
+            </label>
+
+            <label for="title">Title:
+                <input type="text" id="title" name="title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" title="Please enter a title with at least 7 characters, using only letters, spaces, and hyphens">
+            </label>
+
+            <label for="email">Email:
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@email.com" title="Please enter a valid email address">
+            </label>
+
+            <label for="phone">Mobile Phone Number:
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" title="Please enter your mobile phone number">
+            </label>
+
+            <label for="business-name">Business/Organization Name:
+                <input type="text" id="business-name" name="business-name" required autocomplete="organization" title="Please enter your business or organization name">
+            </label>
+
+            <label for="membership-level">Membership Level:
+                <select id="membership-level" name="membership-level" required title="Please select a membership level">
+                    <option value="">Select a membership level</option>
+                    <option value="np">NP Membership (Non-profit, no fee)</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+            </label>
+
+            <label for="description">Business/Organization Description:
+                <textarea id="description" name="description" title="Please provide a description of your business or organization"></textarea>
+            </label>
+
+            <input type="hidden" id="timestamp" name="timestamp">
+
+            <input type="submit" value="Join the Chamber">
+        </form>
+
+        <div class="membership-cards">
+            <div class="membership-card" id="np-card">
+                <h3>NP Membership</h3>
+                <p>For non-profit organizations</p>
+                <a href="#" class="modal-link" data-modal="np-modal">Learn More</a>
+            </div>
+            <div class="membership-card" id="bronze-card">
+                <h3>Bronze Membership</h3>
+                <p>Basic benefits for small businesses</p>
+                <a href="#" class="modal-link" data-modal="bronze-modal">Learn More</a>
+            </div>
+            <div class="membership-card" id="silver-card">
+                <h3>Silver Membership</h3>
+                <p>Enhanced benefits for growing businesses</p>
+                <a href="#" class="modal-link" data-modal="silver-modal">Learn More</a>
+            </div>
+            <div class="membership-card" id="gold-card">
+                <h3>Gold Membership</h3>
+                <p>Premium benefits for established businesses</p>
+                <a href="#" class="modal-link" data-modal="gold-modal">Learn More</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="np-modal" class="modal">
+        <div class="modal-content">
+            <h2>NP Membership Benefits</h2>
+            <ul>
+                <li>Free membership for non-profit organizations</li>
+                <li>Basic listing in the chamber directory</li>
+                <li>Access to networking events</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <div id="bronze-modal" class="modal">
+        <div class="modal-content">
+            <h2>Bronze Membership Benefits</h2>
+            <ul>
+                <li>Enhanced listing in the chamber directory</li>
+                <li>Discounted rates for chamber events</li>
+                <li>Monthly newsletter subscription</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <div id="silver-modal" class="modal">
+        <div class="modal-content">
+            <h2>Silver Membership Benefits</h2>
+            <ul>
+                <li>All Bronze benefits</li>
+                <li>Featured listing in the chamber directory</li>
+                <li>Access to exclusive networking events</li>
+                <li>Advertising opportunities in chamber publications</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <div id="gold-modal" class="modal">
+        <div class="modal-content">
+            <h2>Gold Membership Benefits</h2>
+            <ul>
+                <li>All Silver benefits</li>
+                <li>Premium listing in the chamber directory</li>
+                <li>Spotlight feature on the chamber homepage</li>
+                <li>Exclusive sponsorship opportunities</li>
+                <li>Priority access to chamber resources and support</li>
+            </ul>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <p>Lasgidi Chamber of Commerce</p>
+            <p>1 Okhira Road NRC Compound Ebute-Metta, Lagos, Nigeria</p>
+            <p>info@lasgidicc.org</p>
+            <p>(234) 000-2300-000</p>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube" width="30" height="17">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter.webp" alt="Twitter" width="30" height="17">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn" width="30" height="17">
+            </a>
+        </div>
+        <p>&copy; <span id="current-year"></span> Lasgidi Chamber of Commerce | Eseoghene Jacob Gbunoghene | WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

@@ -101,12 +101,87 @@ function setupNavigationMenu() {
     });
 }
 
+// Set up join form
+function setupJoinForm() {
+    const form = document.querySelector('form');
+    const timestampInput = document.getElementById('timestamp');
+
+    if (form && timestampInput) {
+        timestampInput.value = new Date().toISOString();
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.location.href = 'thankyou.html?' + new URLSearchParams(new FormData(form));
+        });
+    }
+}
+
+// Set up membership card modals
+function setupMembershipModals() {
+    const modalLinks = document.querySelectorAll('.modal-link');
+    const closeButtons = document.querySelectorAll('.close-modal');
+
+    modalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = link.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            modal.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+        }
+    });
+}
+
+// Display form summary on thank you page
+function displayFormSummary() {
+    const formSummary = document.getElementById('form-summary');
+    if (formSummary) {
+        const params = new URLSearchParams(window.location.search);
+        formSummary.innerHTML = `
+            <p><strong>First Name:</strong> ${params.get('first-name')}</p>
+            <p><strong>Last Name:</strong> ${params.get('last-name')}</p>
+            <p><strong>Email:</strong> ${params.get('email')}</p>
+            <p><strong>Phone:</strong> ${params.get('phone')}</p>
+            <p><strong>Business Name:</strong> ${params.get('business-name')}</p>
+            <p><strong>Membership Level:</strong> ${params.get('membership-level')}</p>
+            <p><strong>Date Submitted:</strong> ${new Date(params.get('timestamp')).toLocaleString()}</p>
+        `;
+    }
+}
+
 // Initialize the page
 async function init() {
-    displaySpotlights();
-    displayWeather();
     setupNavigationMenu();
     updateFooter();
+
+    if (document.querySelector('.company-spotlights')) {
+        displaySpotlights();
+    }
+
+    if (document.querySelector('.weather')) {
+        displayWeather();
+    }
+
+    if (document.querySelector('.join-page')) {
+        setupJoinForm();
+        setupMembershipModals();
+    }
+
+    if (document.querySelector('.thank-you-page')) {
+        displayFormSummary();
+    }
 }
 
 // Run initialization when the DOM is fully loaded

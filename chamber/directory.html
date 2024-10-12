@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta name="description" content="Directory page for Lasgidi Chamber of Commerce" >
-    <meta name="author" content="Eseoghene Jacob Gbunoghene" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directory of Lasgidi Chamber of Commerce members">
+    <meta name="author" content="Eseoghene Jacob Gbunoghene">
     <title>Lasgidi Chamber of Commerce Directory</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" >
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Lasgidi Chamber of Commerce Directory">
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 
     <!-- Add structured data for SEO -->
     <script type="application/ld+json">
@@ -47,10 +48,10 @@
     </header>
 
     <main>
-        <h1>Business Directory</h1>
+        <h2>Business Directory</h2>
         <div class="view-toggle">
-            <button id="grid-view">Grid View</button>
-            <button id="list-view">List View</button>
+            <button id="grid-view-btn">Grid View</button>
+            <button id="list-view-btn">List View</button>
         </div>
         <div id="directory-container" class="grid-view">
             <!-- Member cards will be dynamically inserted here -->
