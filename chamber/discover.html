@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Lagos - Lagos Chamber of Commerce">
+    <meta name="author" content="Eseoghene Jacob Gbunoghene">
+    <title>Discover Lagos - Lagos Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Discover Lagos - Lagos Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://s-a-oghene.github.io/wdd231/chamber/images/danfo1.webp">
+    <meta property="og:url" content="https://s-a-oghene.github.io/wdd231/chamber/discover.html">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+            <img src="images/danfo1.webp" alt="Lagos Chamber of Commerce Logo" class="profile-pic" width="70" height="70">
+            <h1>Lagos Chamber of Commerce</h1>
+        </div>
+        
+        <nav>
+            <button id="menu" class="nav-toggle" aria-label="Toggle navigation menu"></button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-main">
+        <h2>Chamber Discover Page</h2>
+        <div class="discover-grid">
+            <section class="sidebar">
+                <div class="visit-message" id="visitMessage"></div>
+                
+                <div class="demographics">
+                    <h2>Lagos Demographics</h2>
+                    <ul>
+                        <li>Population: 15.4 million</li>
+                        <li>GDP: $84 billion</li>
+                        <li>Business Growth: 8.5% annually</li>
+                        <li>Major Industries: Finance, Technology, Manufacturing</li>
+                    </ul>
+                </div>
+
+                <div class="upcoming-events">
+                    <h2>Upcoming Events</h2>
+                    <ul>
+                        <li>Lagos Business Expo - October 2024</li>
+                        <li>Tech Summit - November 2024</li>
+                        <li>Cultural Festival - December 2024</li>
+                    </ul>
+                </div>
+
+                <div class="statistics">
+                    <h2>Business Statistics</h2>
+                    <ul>
+                        <li>Registered Companies: 50,000+</li>
+                        <li>Foreign Investment: $3.2B annually</li>
+                        <li>Startup Ecosystem Value: $2B</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="image-gallery">
+                <h2>Discover Lagos</h2>
+                <div class="gallery-container">
+                    <figure>
+                        <img src="images/victoria-island-business-district.webp" 
+                             data-src="images/victoria-island-business-district.webp" 
+                             alt="Lagos Business District" 
+                             loading="lazy">
+                        <figcaption>Victoria Island Business District</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="images/yaba-tech-hub.webp" 
+                             data-src="images/yaba-tech-hub.webp" 
+                             alt="Lagos Tech Hub" 
+                             loading="lazy">
+                        <figcaption>Yaba Tech Hub</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="images/balogun-market.webp" 
+                             data-src="images/balogun-market.webp" 
+                             alt="Traditional Market" 
+                             loading="lazy">
+                        <figcaption>Balogun Market</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="images/port-complex.webp" 
+                             data-src="images/port-complex.webp" 
+                             alt="Lagos Port" 
+                             loading="lazy">
+                        <figcaption>Apapa Port Complex</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="images/freedom-park.webp" 
+                             data-src="images/freedom-park.webp" 
+                             alt="Cultural Center" 
+                             loading="lazy">
+                        <figcaption>Freedom Park Cultural Center</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="images/beach.webp" 
+                             data-src="images/beach.webp" 
+                             alt="Lagos Beach" 
+                             loading="lazy">
+                        <figcaption>Landmark Beach</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Lagos Chamber of Commerce</p>
+            <p>1 Okhira Road NRC Compound Ebute-Metta, Lagos, Nigeria</p>
+            <p>info@Lagoscc.org</p>
+            <p>(234) 000-2300-000</p>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube" width="30" height="17">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter.webp" alt="Twitter" width="30" height="17">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn" width="30" height="17">
+            </a>
+        </div>
+        <p>&copy; <span id="current-year"></span> Lagos Chamber of Commerce | Eseoghene Jacob Gbunoghene | WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

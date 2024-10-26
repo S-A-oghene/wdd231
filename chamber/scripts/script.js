@@ -1,3 +1,53 @@
+// Lazy loading implementation
+const images = document.querySelectorAll('[data-src]');
+
+const loadImage = (img) => {
+    img.setAttribute('src', img.getAttribute('data-src'));
+    img.onload = () => {
+        img.removeAttribute('data-src');
+    };
+};
+
+const imageOptions = {
+    threshold: 0,
+    rootMargin: '0px 0px 50px 0px'
+};
+
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadImage(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, imageOptions);
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Visit tracking
+function getVisitMessage() {
+    const visitMessage = document.getElementById('visitMessage');
+    const lastVisit = localStorage.getItem('lastVisit');
+    const currentDate = Date.now();
+
+    if (!lastVisit) {
+        visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+    } else {
+        const daysSinceLastVisit = Math.floor((currentDate - lastVisit) / (1000 * 60 * 60 * 24));
+        
+        if (daysSinceLastVisit < 1) {
+            visitMessage.textContent = "Back so soon! Awesome!";
+        } else if (daysSinceLastVisit === 1) {
+            visitMessage.textContent = "You last visited 1 day ago.";
+        } else {
+            visitMessage.textContent = `You last visited ${daysSinceLastVisit} days ago.`;
+        }
+    }
+    
+    localStorage.setItem('lastVisit', currentDate);
+}
+
 // Fetch member data
 async function fetchMembers() {
     try {
@@ -68,7 +118,7 @@ async function displayWeather() {
     const weatherForecast = document.getElementById('weather-forecast');
     weatherForecast.innerHTML = '<h3>3-Day Forecast</h3>';
     for (let i = 1; i <= 3; i++) {
-        const forecast = weatherData.list[i * 8]; // Every 8th entry is 24 hours apart
+        const forecast = weatherData.list[i * 8];
         const date = new Date(forecast.dt * 1000);
         weatherForecast.innerHTML += `
             <p>${date.toLocaleDateString('en-US', { weekday: 'short' })}: ${forecast.main.temp.toFixed(0)}°C</p>

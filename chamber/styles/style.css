@@ -46,7 +46,6 @@ header {
   font-size: 1.5rem;
   margin: 0;
 }
-
 /* Navigation Styling */
 nav ul.nav-menu {
   list-style: none;
@@ -118,30 +117,8 @@ main {
   border-radius: 5px;
   font-weight: bold;
 }
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* Current Events Section */
-.current-events {
-  background-color: white;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Weather Section */
-.weather {
+/* Current Events and Weather Sections */
+.current-events, .weather {
   background-color: white;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -163,6 +140,98 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Discovery Page Specific Styles */
+.discover-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.discover-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.sidebar {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.visit-message {
+  background-color: var(--primary-color);
+  color: var(--header-text-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+/* Demographics, Events, and Statistics */
+.demographics, .upcoming-events, .statistics {
+  margin-bottom: 2rem;
+}
+
+.demographics h2, .upcoming-events h2, .statistics h2 {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.demographics ul, .upcoming-events ul, .statistics ul {
+  list-style: none;
+  padding: 0;
+}
+
+.demographics li, .upcoming-events li, .statistics li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.demographics li::before, .upcoming-events li::before, .statistics li::before {
+  content: "•";
+  color: var(--secondary-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Gallery Styles */
+.gallery-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.gallery-container figure {
+  margin: 0;
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-container figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.gallery-container figcaption {
+  text-align: center;
+  padding: 0.8rem 0 0;
+  font-style: italic;
+  color: var(--text-color);
+}
 /* Join Page Styles */
 .join-page {
   display: flex;
@@ -210,12 +279,14 @@ main {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
 }
 
 .membership-card h3 {
   margin-top: 0;
 }
-
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -235,9 +306,14 @@ main {
   border: 1px solid #888;
   width: 80%;
   max-width: 600px;
+  position: relative;
+  padding-top: 2rem;
 }
 
 .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -268,6 +344,44 @@ main {
   border-radius: 5px;
   font-weight: bold;
 }
+/* Directory Page Styles */
+.view-toggle {
+  margin-bottom: 1rem;
+}
+
+.view-toggle button {
+  background-color: var(--primary-color);
+  color: var(--header-text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+#directory-container {
+  display: grid;
+  gap: 1rem;
+}
+
+#directory-container.grid-view {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#directory-container.list-view {
+  grid-template-columns: 1fr;
+}
+
+.member-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* Footer Styles */
 footer {
@@ -283,8 +397,23 @@ footer {
   height: 17px;
   margin: 0 0.5rem;
 }
-
 /* Responsive Design */
+@media screen and (min-width: 768px) {
+  .discover-grid {
+    grid-template-columns: 300px 1fr;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
@@ -327,25 +456,10 @@ footer {
     order: -1;
   }
 }
-
-/* Improved color contrast for accessibility */
-a {
-  color: #1a5f7a;
-}
-
-button {
-  background-color: #27ae60;
-}
-
-/* Animation for membership cards */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.membership-card {
-  animation: fadeIn 0.5s ease-out forwards;
-  opacity: 0;
 }
 
 .membership-card:nth-child(1) { animation-delay: 0.1s; }
@@ -353,46 +467,7 @@ button {
 .membership-card:nth-child(3) { animation-delay: 0.3s; }
 .membership-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* Directory page styles */
-.view-toggle {
-  margin-bottom: 1rem;
-}
-
-.view-toggle button {
-  background-color: var(--primary-color);
-  color: var(--header-text-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-}
-
-#directory-container {
-  display: grid;
-  gap: 1rem;
-}
-
-#directory-container.grid-view {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-#directory-container.list-view {
-  grid-template-columns: 1fr;
-}
-
-.member-card {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.member-card img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Accessibility improvements */
+/* Accessibility Improvements */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -412,63 +487,7 @@ button:focus {
   outline: 2px solid var(--primary-color);
 }
 
-/* Additional styles for better form layout */
-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form input[type="submit"] {
-  width: auto;
-  cursor: pointer;
-}
-
-/* Improved modal styles */
-.modal-content {
-  position: relative;
-  padding-top: 2rem;
-}
-
-.close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/* Responsive improvements */
-@media screen and (max-width: 600px) {
-  .hero {
-    height: 200px;
-  }
-
-  .cta-button {
-    bottom: 10px;
-    right: 10px;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  .membership-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-content {
-    width: 90%;
-    margin: 10% auto;
-  }
-}
-
-/* Print styles */
+/* Print Styles */
 @media print {
   header, nav, footer, .cta-button, .membership-cards {
     display: none;
