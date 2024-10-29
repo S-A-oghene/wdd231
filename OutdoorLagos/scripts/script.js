@@ -70,7 +70,17 @@ async function displayFeaturedActivities() {
         .sort(() => 0.5 - Math.random())
         .slice(0, 3);
     
-    displayActivities(featured, spotlightContainer);
+    spotlightContainer.innerHTML = featured.map(activity => `
+        <div class="activity-card" data-id="${activity.id}">
+            <img src="${activity.imageUrl}" alt="${activity.name}" loading="lazy">
+            <div class="activity-info">
+                <h3>${activity.name}</h3>
+                <p>${activity.description}</p>
+                <p class="price-range">${activity.priceRange}</p>
+                <button class="view-details" data-id="${activity.id}">View Details</button>
+            </div>
+        </div>
+    `).join('');
 }
 
 async function setupActivityFilter() {
@@ -149,23 +159,50 @@ async function populateActivitySelect() {
 
 function handlePlanSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const planData = Object.fromEntries(formData.entries());
     
-    // Add to schedule timeline
+    const activitySelect = document.getElementById('activity-select');
+    const activityName = activitySelect.options[activitySelect.selectedIndex].text;
+    const date = document.getElementById('activity-date').value;
+    const time = document.getElementById('activity-time').value;
+    const duration = document.getElementById('activity-duration').value;
+    
     const timeline = document.getElementById('schedule-timeline');
     if (timeline) {
         const scheduleItem = document.createElement('div');
         scheduleItem.className = 'schedule-item';
         scheduleItem.innerHTML = `
-            <h3>${planData.activity}</h3>
-            <p>Date: ${planData.date}</p>
-            <p>Time: ${planData.time}</p>
-            <p>Duration: ${planData.duration} hours</p>
+            <h3>${activityName}</h3>
+            <p>Date: ${date}</p>
+            <p>Time: ${time}</p>
+            <p>Duration: ${duration} hours</p>
         `;
         timeline.appendChild(scheduleItem);
+        
+        // Add Clear Schedule button if it doesn't exist
+        if (!document.getElementById('clear-schedule')) {
+            const clearButton = document.createElement('button');
+            clearButton.id = 'clear-schedule';
+            clearButton.className = 'btn-primary';
+            clearButton.textContent = 'Clear Schedule';
+            clearButton.onclick = clearSchedule;
+            timeline.parentElement.appendChild(clearButton);
+        }
     }
 }
+
+function clearSchedule() {
+    // Clear form
+    document.getElementById('planner-form').reset();
+    
+    // Clear timeline
+    const timeline = document.getElementById('schedule-timeline');
+    timeline.innerHTML = '';
+    
+    // Remove clear button
+    document.getElementById('clear-schedule').remove();
+}
+
+
 
 // Utility Functions
 function capitalizeWords(str) {
