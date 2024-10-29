@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutdoorLagos Site Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0077B6;
+            --secondary-color: #FFB703;
+            --background-color: #FFFFFF;
+            --accent-color: #023E8A;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+
+        nav {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--accent-color);
+            padding: 1rem;
+            color: white;
+        }
+
+        .color-scheme {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .color-sample {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .wireframes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .wireframe {
+            border: 2px solid var(--primary-color);
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OutdoorLagos Site Plan</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Site Name</h2>
+            <p>OutdoorLagos - Selected to directly communicate the site's focus on outdoor activities in Lagos.</p>
+        </section>
+
+        <section>
+            <h2>Site Purpose</h2>
+            <ul>
+                <li>Provide real-time weather information for Lagos</li>
+                <li>Recommend suitable outdoor activities based on current conditions</li>
+                <li>Help users plan outdoor activities with weather-aware scheduling</li>
+                <li>Offer location-specific air quality data</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scenarios</h2>
+            <ul>
+                <li>What outdoor activities are suitable today given the current weather in Lagos?</li>
+                <li>Which beaches in Lagos are best to visit based on today's weather forecast?</li>
+                <li>What's the best time to visit Lekki Conservation Centre this week?</li>
+                <li>Is the air quality suitable for outdoor dining in Victoria Island today?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Color Schema</h2>
+            <div class="color-scheme">
+                <div class="color-sample" style="background-color: #0077B6">Primary: #0077B6</div>
+                <div class="color-sample" style="background-color: #FFB703; color: black">Secondary: #FFB703</div>
+                <div class="color-sample" style="background-color: #023E8A">Accent: #023E8A</div>
+                <div class="color-sample" style="background-color: #FFFFFF; color: black; border: 1px solid #000">Background: #FFFFFF</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Typography</h2>
+            <h3 style="font-family: 'Montserrat'">Headings: Montserrat</h3>
+            <p style="font-family: 'Open Sans'">Body: Open Sans</p>
+            <p style="font-family: 'Roboto'">Accent: Roboto</p>
+        </section>
+
+        <section>
+            <h2>Wireframes</h2>
+            <div class="wireframes">
+                <div class="wireframe">
+                    <h3>Mobile View</h3>
+                    <img src="images/mobile-wireframe.jpg" alt="Mobile wireframe layout" style="width: 100%; height: auto;">
+                </div>
+                <div class="wireframe">
+                    <h3>Desktop View</h3>
+                    <img src="images/desktop-wireframe.jpg" alt="Desktop wireframe layout" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>

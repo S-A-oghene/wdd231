@@ -1,0 +1,59 @@
+{
+    "activities": [
+        {
+            "id": 1,
+            "name": "Tarkwa Bay Beach",
+            "type": "beach",
+            "description": "Beautiful beach perfect for swimming and sunbathing",
+            "location": "Tarkwa Bay, Lagos",
+            "imageUrl": "images/tarkwa-bay.webp",
+            "bestTime": "Morning to Early Afternoon",
+            "priceRange": "₦1,000 - ₦5,000",
+            "weatherSensitive": true
+        },
+        {
+            "id": 2,
+            "name": "Lekki Conservation Centre",
+            "type": "park",
+            "description": "Nature reserve with Africa's longest canopy walkway",
+            "location": "Lekki, Lagos",
+            "imageUrl": "images/conservative-centre.webp",
+            "bestTime": "Early Morning or Late Afternoon",
+            "priceRange": "₦2,000 - ₦3,000",
+            "weatherSensitive": true
+        },
+        {
+            "id": 3,
+            "name": "Balogun Market",
+            "type": "market",
+            "description": "Vibrant traditional market for authentic Nigerian goods",
+            "location": "Lagos Island",
+            "imageUrl": "images/market.webp",
+            "bestTime": "Morning to Afternoon",
+            "priceRange": "Varies",
+            "weatherSensitive": false
+        },
+        {
+            "id": 4,
+            "name": "Lagos Lagoon Cruise",
+            "type": "boat",
+            "description": "Scenic boat tour around Lagos waterways",
+            "location": "Victoria Island",
+            "imageUrl": "images/lagoon-cruise.webp",
+            "bestTime": "Sunset",
+            "priceRange": "₦15,000 - ₦25,000",
+            "weatherSensitive": true
+        },
+        {
+            "id": 5,
+            "name": "Elegushi Beach",
+            "type": "beach",
+            "description": "Popular beach with various water activities",
+            "location": "Lekki, Lagos",
+            "imageUrl": "images/beach.webp",
+            "bestTime": "Weekend Mornings",
+            "priceRange": "₦1,000 - ₦3,000",
+            "weatherSensitive": true
+        }
+    ]
+}

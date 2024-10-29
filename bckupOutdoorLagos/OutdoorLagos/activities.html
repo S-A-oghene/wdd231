@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OutdoorLagos - Your weather-based activity planner for Lagos, Nigeria">
-    <meta property="og:title" content="OutdoorLagos">
+    <meta name="description" content="Discover weather-appropriate outdoor activities in Lagos">
+    <meta property="og:title" content="OutdoorLagos - Activities">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/outdoorlagos-logo.webp">
-    <meta property="og:url" content="https://outdoorlagos.com">
-    <title>OutdoorLagos - Weather-Smart Activity Planning</title>
+    <meta property="og:url" content="https://outdoorlagos.com/activities">
+    <title>Activities - OutdoorLagos</title>
 <!-- Update in all HTML files -->
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
@@ -32,8 +32,8 @@
             </button>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="activities.html" class="active">Activities</a></li>
                     <li><a href="planner.html">Plan Your Day</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -42,20 +42,30 @@
     </header>
 
     <main>
-        <section id="weather-widget" class="weather-container">
-            <h1>Lagos Weather Today</h1>
-            <div id="weather-info"></div>
-            <div id="weather-forecast"></div>
+        <section class="activity-filters">
+            <h1>Lagos Activities</h1>
+            <div class="filter-controls">
+                <select id="activity-type" aria-label="Filter by activity type">
+                    <option value="all">All Activities</option>
+                    <option value="beach">Beaches</option>
+                    <option value="park">Parks</option>
+                    <option value="market">Markets</option>
+                    <option value="boat">Boat Tours</option>
+                </select>
+                <div id="weather-status" class="weather-badge"></div>
+            </div>
         </section>
 
-        <section id="featured-activities">
-            <h2>Recommended Activities</h2>
-            <div id="spotlight-container" class="activities-grid"></div>
+        <section id="activities-grid" class="activities-container">
+            <!-- Activities dynamically populated by JavaScript -->
         </section>
 
-        <section id="visit-info">
-            <p id="visitMessage"></p>
-        </section>
+        <dialog id="activity-modal">
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Close modal">×</button>
+                <div id="modal-content"></div>
+            </div>
+        </dialog>
     </main>
 
     <footer>
