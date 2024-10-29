@@ -3,7 +3,7 @@
 A weather-smart activity planning platform for Lagos, Nigeria.
 
 ## Project Demonstration
-Watch the OutdoorLagos demonstration video here: [OutdoorLagos Demo](https://youtu.be/oOTPhaLUPIo)
+Watch the OutdoorLagos demonstration video here: [OutdoorLagos Demo](https://youtu.be/fBKuxdAOEmU)
 
 ## Features
 - Real-time weather integration
