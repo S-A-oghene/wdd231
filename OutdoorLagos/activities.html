@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover weather-appropriate outdoor activities in Lagos">
+    <meta property="og:title" content="OutdoorLagos - Activities">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/outdoorlagos-logo.webp">
+    <meta property="og:url" content="https://outdoorlagos.com/activities">
+    <title>Activities - OutdoorLagos</title>
+<!-- Update in all HTML files -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/outdoorlagos-logo.webp" alt="OutdoorLagos Logo" width="150" height="50">
+            </div>
+            <button id="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="activities.html" class="active">Activities</a></li>
+                    <li><a href="planner.html">Plan Your Day</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="activity-filters">
+            <h1>Lagos Activities</h1>
+            <div class="filter-controls">
+                <select id="activity-type" aria-label="Filter by activity type">
+                    <option value="all">All Activities</option>
+                    <option value="beach">Beaches</option>
+                    <option value="park">Parks</option>
+                    <option value="market">Markets</option>
+                    <option value="boat">Boat Tours</option>
+                </select>
+                <div id="weather-status" class="weather-badge"></div>
+            </div>
+        </section>
+
+        <section id="activities-grid" class="activities-container">
+            <!-- Activities dynamically populated by JavaScript -->
+        </section>
+
+        <dialog id="activity-modal">
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Close modal">×</button>
+                <div id="modal-content"></div>
+            </div>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>OutdoorLagos Activity Planner</p>
+            <p>1 Okhira Road NRC Compound Ebute-Metta, Lagos, Nigeria</p>
+            <p>info@outdoorlagos.com</p>
+            <p>(234) 000-2300-000</p>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube" width="30" height="17">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter.webp" alt="Twitter" width="30" height="17">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn" width="30" height="17">
+            </a>
+        </div>
+        <p>&copy; <span id="current-year"></span> OutdoorLagos | Weather-Smart Activity Planning</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

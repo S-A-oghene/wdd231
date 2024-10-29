@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about OutdoorLagos and our mission to enhance outdoor experiences">
+    <meta property="og:title" content="About OutdoorLagos">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/outdoorlagos-logo.webp">
+    <meta property="og:url" content="https://outdoorlagos.com/about">
+    <title>About - OutdoorLagos</title>
+<!-- Update in all HTML files -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/outdoorlagos-logo.webp" alt="OutdoorLagos Logo" width="150" height="50">
+            </div>
+            <button id="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="planner.html">Plan Your Day</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-main">
+        <section class="about-hero">
+            <h1>About OutdoorLagos</h1>
+            <p class="mission-statement">Enhancing outdoor experiences in Lagos through smart weather-based planning.</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-grid">
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>OutdoorLagos is dedicated to helping residents and visitors make informed decisions about outdoor activities based on real-time weather conditions. We combine accurate weather data with local knowledge to ensure you get the most out of your Lagos experience.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Weather Data</h2>
+                    <p>We use the OpenWeatherMap API to provide accurate, up-to-date weather information for Lagos. Our weather data is updated every 3 hours to ensure you have the most current information for planning your activities.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Local Expertise</h2>
+                    <p>Our team consists of local experts who understand Lagos weather patterns and can recommend the best activities for any weather condition. We work closely with local businesses and tour operators to provide accurate, reliable information.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="weather-tips">
+            <h2>Weather Safety Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Rainy Season (April-October)</h3>
+                    <ul>
+                        <li>Always carry rain gear</li>
+                        <li>Check flood alerts</li>
+                        <li>Have indoor backup plans</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h3>Dry Season (November-March)</h3>
+                    <ul>
+                        <li>Stay hydrated</li>
+                        <li>Use sun protection</li>
+                        <li>Plan early morning activities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>OutdoorLagos Activity Planner</p>
+            <p>1 Okhira Road NRC Compound Ebute-Metta, Lagos, Nigeria</p>
+            <p>info@outdoorlagos.com</p>
+            <p>(234) 000-2300-000</p>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube" width="30" height="17">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter.webp" alt="Twitter" width="30" height="17">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn" width="30" height="17">
+            </a>
+        </div>
+        <p>&copy; <span id="current-year"></span> OutdoorLagos | Weather-Smart Activity Planning</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

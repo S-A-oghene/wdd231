@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OutdoorLagos - Your weather-based activity planner for Lagos, Nigeria">
+    <meta property="og:title" content="OutdoorLagos">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/outdoorlagos-logo.webp">
+    <meta property="og:url" content="https://outdoorlagos.com">
+    <title>OutdoorLagos - Weather-Smart Activity Planning</title>
+<!-- Update in all HTML files -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/outdoorlagos-logo.webp" alt="OutdoorLagos Logo" width="150" height="50">
+            </div>
+            <button id="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="planner.html">Plan Your Day</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="weather-widget" class="weather-container">
+            <h1>Lagos Weather Today</h1>
+            <div id="weather-info"></div>
+            <div id="weather-forecast"></div>
+        </section>
+
+        <section id="featured-activities">
+            <h2>Recommended Activities</h2>
+            <div id="spotlight-container" class="activities-grid"></div>
+        </section>
+
+        <section id="visit-info">
+            <p id="visitMessage"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>OutdoorLagos Activity Planner</p>
+            <p>1 Okhira Road NRC Compound Ebute-Metta, Lagos, Nigeria</p>
+            <p>info@outdoorlagos.com</p>
+            <p>(234) 000-2300-000</p>
+        </div>
+        <div class="social-links">
+            <a href="#" aria-label="YouTube">
+                <img src="images/youtube.webp" alt="YouTube" width="30" height="17">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="images/twitter.webp" alt="Twitter" width="30" height="17">
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <img src="images/linkedin.webp" alt="LinkedIn" width="30" height="17">
+            </a>
+        </div>
+        <p>&copy; <span id="current-year"></span> OutdoorLagos | Weather-Smart Activity Planning</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

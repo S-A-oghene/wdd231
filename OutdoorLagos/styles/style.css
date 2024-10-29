@@ -1,0 +1,218 @@
+/* CSS Reset and Root Variables */
+:root {
+    --primary-color: #0077B6;
+    --secondary-color: #FFB703;
+    --accent-color: #023E8A;
+    --text-color: #333333;
+    --background-color: #FFFFFF;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--secondary-color);
+}
+
+/* Hamburger Menu */
+#hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+#hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Weather Widget */
+.weather-container {
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.weather-container h1,
+.weather-container h2,
+.weather-container h3 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Activities Grid */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-links img {
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hamburger-menu {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--accent-color);
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form Styles */
+.planner-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Modal Styles */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+.loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.error-message {
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
